@@ -213,6 +213,7 @@
                         <outlet property="nameField" destination="OZu-KF-PWD" id="MWm-jq-WOt"/>
                         <outlet property="saveButton" destination="Dds-rz-bga" id="L4L-VA-LC3"/>
                         <outlet property="scrollView" destination="Nms-Mg-Zce" id="c4P-j3-a3I"/>
+                        <outlet property="scrollViewBottomLayout" destination="59e-c1-mRu" id="efZ-Og-j1m"/>
                         <outlet property="symbolField" destination="BSd-Sf-Ogi" id="fwq-z4-HvY"/>
                         <outlet property="usageField" destination="qtO-qF-6vS" id="hnb-pO-nQH"/>
                     </connections>
