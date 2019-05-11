@@ -106,6 +106,28 @@ extension EmojiListViewController {
 }
 
 
+extension EmojiListViewController {
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
+            self.emojis.remove(at: indexPath.row)
+            
+            self.uploadData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        let insertAction = UITableViewRowAction(style: .normal, title: "Insert") { (_, indexPath) in
+            let copyEmoji = self.emojis[indexPath.row]
+            let endOfTableIndexPath = IndexPath(row: self.emojis.count, section: 0)
+            self.emojis.append(copyEmoji)
+            
+            self.uploadData()
+            tableView.insertRows(at: [endOfTableIndexPath], with: .automatic)
+        }
+        
+        return [deleteAction, insertAction]
+    }
+}
+
 // MARK: - Navigation
 extension EmojiListViewController {
     @IBAction func unwind(segue: UIStoryboardSegue) {        
